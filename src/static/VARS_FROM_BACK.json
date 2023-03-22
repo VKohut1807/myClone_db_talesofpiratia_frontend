@@ -1,0 +1,399 @@
+{
+  "items": [
+    {
+      "id": 7882,
+      "img": "https://mordo.info/images/icons/n2128.gif",
+      "name": "Box of Faith",
+      "description": "It says that you should open the box and get ready for your faith; the brave will be the final victor and greed will turn you into a complete loser.",
+      "type": "miscellaneous",
+      "level": 0,
+      "race": ["any"],
+      "class": ["any"],
+      "price": 1000,
+      "isTradable": true,
+      "isDroppable": true,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 99,
+      "insideStorage": [
+        { "id": 885, "chance": 100 },
+        { "id": 7882, "chance": 100 }
+      ],
+      "insideMonsters": [{ "id": 1358, "chance": 100 }],
+      "containsElements": [
+        { "id": 15633, "chance": 100 },
+        { "id": 7882, "chance": 100 }
+      ],
+      "bonuses": {}
+    },
+    {
+      "id": 7611,
+      "img": "https://mordo.info/images/icons/n2074.gif",
+      "name": "Symbol of Faith",
+      "description": "This Item is obtained when survives or kill monsters in Tribulation of Faith. Can be used to redeem rewards.",
+      "type": "miscellaneous",
+      "level": 0,
+      "race": ["any"],
+      "class": ["any"],
+      "price": 1000,
+      "isTradable": true,
+      "isDroppable": true,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 999,
+      "insideStorage": [],
+      "insideMonsters": [
+        {
+          "id": 1358,
+          "chance": 100
+        }
+      ],
+      "bonuses": {}
+    },
+    {
+      "id": 15633,
+      "img": "https://pirateking.online/data/database/icon/n0322.png",
+      "name": "Lv10 Skeletar Chest (Untradable)",
+      "description": "Double click to obtain Lv 10 Green Gear based in your class.",
+      "type": "miscellaneous",
+      "level": 0,
+      "race": ["any"],
+      "class": ["any"],
+      "price": 500,
+      "isTradable": true,
+      "isDroppable": true,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 99,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {}
+    },
+    {
+      "id": 15632,
+      "img": "https://pirateking.online/data/database/icon/n1755.png",
+      "name": "Lv40 Green Chest (Untradable)",
+      "description": "Double click to obtain Lv 40 Green Gear based in your class.",
+      "type": "miscellaneous",
+      "level": 0,
+      "race": ["any"],
+      "class": ["any"],
+      "price": 500,
+      "isTradable": false,
+      "isDroppable": false,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 99,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {}
+    },
+    {
+      "id": 15631,
+      "img": "https://pirateking.online/data/database/icon/w0244.png",
+      "name": "Blade of the Tempest",
+      "description": "Cannot be traded or dropped!",
+      "type": "dagger",
+      "level": 40,
+      "race": ["lance", "phyllis", "ami"],
+      "class": ["voyager"],
+      "price": 4000,
+      "isTradable": false,
+      "isDroppable": false,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 1,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {
+        "id": 15631,
+        "constitution": 2,
+        "spirit": 2,
+        "minAttack": {
+          "from": 169,
+          "to": 199
+        },
+        "maxAttack": {
+          "from": 207,
+          "to": 245
+        }
+      }
+    },
+    {
+      "id": 15630,
+      "img": "https://pirateking.online/data/database/icon/e0498.png",
+      "name": "Boots of the Tempest",
+      "description": "Cannot be traded or dropped",
+      "type": "shoes",
+      "level": 40,
+      "race": ["lance", "phyllis", "ami"],
+      "class": ["voyager"],
+      "price": 3000,
+      "isTradable": false,
+      "isDroppable": false,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 1,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {
+        "id": 15630,
+        "constitution": 2,
+        "spirit": 2,
+        "defense": {
+          "from": 25,
+          "to": 30
+        },
+        "dodge": {
+          "from": 49,
+          "to": 54
+        }
+      }
+    },
+    {
+      "id": 15629,
+      "img": "https://pirateking.online/data/database/icon/e0323.png",
+      "name": "Gloves of the Tempest",
+      "description": "Cannot be traded or dropped!",
+      "type": "gloves",
+      "level": 40,
+      "race": ["lance", "phyllis", "ami"],
+      "class": ["voyager"],
+      "price": 3000,
+      "isTradable": false,
+      "isDroppable": false,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 1,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {
+        "id": 15629,
+        "constitution": 2,
+        "spirit": 2,
+        "spRecovery": {
+          "from": 4,
+          "to": 5
+        },
+        "defense": {
+          "from": 25,
+          "to": 30
+        },
+        "hitRate": {
+          "from": 41,
+          "to": 45
+        }
+      }
+    },
+    {
+      "id": 15628,
+      "img": "https://pirateking.online/data/database/icon/e0148.png",
+      "name": "Coat of the Tempest",
+      "description": "Cannot be traded or dropped!",
+      "type": "armor",
+      "level": 40,
+      "race": ["lance", "phyllis", "ami"],
+      "class": ["voyager"],
+      "price": 3000,
+      "isTradable": false,
+      "isDroppable": false,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 1,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {
+        "id": 15628,
+        "constitution": 3,
+        "spirit": 3,
+        "defense": {
+          "from": 34,
+          "to": 40
+        },
+        "physicalResist": {
+          "from": 18,
+          "to": 20
+        }
+      }
+    },
+    {
+      "id": 885,
+      "img": "https://pirateking.online/data/database/icon/n1181.png",
+      "name": "Refining Gem",
+      "description": "A required gem for the forging of equipment",
+      "type": "miscellaneous",
+      "level": 0,
+      "race": ["any"],
+      "class": ["any"],
+      "price": 2500,
+      "isTradable": false,
+      "isDroppable": false,
+      "isDiscard": true,
+      "isBanked": true,
+      "isDeleted": true,
+      "isQuest": false,
+      "stackable": 1,
+      "insideStorage": [],
+      "insideMonsters": [],
+      "bonuses": {}
+    }
+  ],
+  "monsters": [
+    {
+      "id": 1358,
+      "img": "https://pirateking.online/data/database/monster/35.png",
+      "name": "Darkpaw",
+      "level": 73,
+      "ai": 10,
+      "healthPoints": 15000,
+      "experience": 30000,
+      "damage": {
+        "from": 1500,
+        "to": 1800
+      },
+      "defense": 140,
+      "flee": 200,
+      "hpRecovery": 10,
+      "radiusOfTheReview": 3000,
+      "radiusOfTheProsecution": 10000,
+      "strength": 105,
+      "accuracy": 105,
+      "stamina": 105,
+      "attacks": "(Ai = 10)",
+      "spiritPoints": 10000,
+      "physicalResist": 25,
+      "hitRate": 350,
+      "critRate": 10,
+      "spRecovery": 0,
+      "attackSpeed": 2000,
+      "movementSpeed": 420,
+      "agility": 105,
+      "constitution": 105,
+      "skills": [
+        {
+          "id": 25,
+          "chance": 100
+        }
+      ],
+      "drop": [
+        {
+          "id": 7611,
+          "chance": 2.5
+        },
+        {
+          "id": 7882,
+          "chance": 1
+        },
+        {
+          "id": 885,
+          "chance": 0.15
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": 25,
+      "name": "Bare Hand",
+      "description": "No information",
+      "img": "https://pirateking.online/data/database/icon/s0247.png",
+      "information": "No information",
+      "effect": "No information",
+      "consumption": "No information"
+    },
+    {
+      "id": 36,
+      "name": "Short Staff",
+      "description": "No information",
+      "img": "https://media.discordapp.net/attachments/1087926414235422812/1087944219055902753/LEGO_no_human_sci_fi_skill_element_32x32_cosmos_sun_rays_greenb_297c2167-fe9c-4934-974d-1c21118a28bf.png?width=572&height=572",
+      "information": "No information",
+      "effect": "No information",
+      "consumption": "No information"
+    },
+    {
+      "id": 281,
+      "name": "Black Dragon Roar",
+      "description": "Monster Skill",
+      "img": "https://pirateking.online/data/database/icon/s0127.png",
+      "information": "Monster Skill",
+      "effect": "Monster Skill",
+      "consumption": "No information"
+    },
+    {
+      "id": 328,
+      "name": "Spiritual Bolt Illusion",
+      "description": "Attacks target with magical damage",
+      "img": "https://pirateking.online/data/database/icon/s0099.png",
+      "information": "Attacks target with magical damage",
+      "effect": "Deal magical damage and ignore Physical Defense. Damage determined by skill level and spirit.",
+      "consumption": "Consumes 32 SP at Level 1. Increases by 2 SP per skill level"
+    }
+  ],
+  "npc": [
+    {
+      "id": 60080,
+      "img": "https://mordo.info/images/npc/10.png",
+      "name": "223 Squadron 1",
+      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
+      "coordinates": { "x": 2270, "y": 2823 }
+    },
+    {
+      "id": 60081,
+      "img": "https://mordo.info/images/npc/10.png",
+      "name": "223 Squadron 2",
+      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
+      "coordinates": { "x": 2270, "y": 2834 }
+    },
+    {
+      "id": 60082,
+      "img": "https://mordo.info/images/npc/10.png",
+      "name": "223 Squadron 3",
+      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
+      "coordinates": { "x": 2203, "y": 2829 }
+    },
+    {
+      "id": 60083,
+      "img": "https://mordo.info/images/npc/10.png",
+      "name": "223 Squadron 4",
+      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
+      "coordinates": { "x": 2197, "y": 2829 }
+    },
+    {
+      "id": 140022,
+      "img": "https://mordo.info/images/npc/7.png",
+      "name": "Abaddon 1 Warden",
+      "area": ["Abaddon 1-4"],
+      "coordinates": { "x": 199, "y": 825 }
+    },
+    {
+      "id": 100001,
+      "img": "https://mordo.info/images/npc/12.png",
+      "name": "Abaddon Merchant",
+      "area": ["Abaddon 10-17", "Hades"],
+      "coordinates": { "x": 191, "y": 174 }
+    },
+    {
+      "id": 60138,
+      "img": "https://mordo.info/images/npc/13.png",
+      "name": "Accessory - Aii",
+      "area": ["Ascaron 2", "Thundoria Castle", "Chaldea Tundra"],
+      "coordinates": { "x": 635, "y": 2091 }
+    }
+  ]
+}
