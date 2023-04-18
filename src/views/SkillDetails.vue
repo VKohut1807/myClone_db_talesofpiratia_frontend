@@ -59,8 +59,21 @@
                   {{ skill.consumption }}
                 </v-list-item-subtitle>
               </v-list-item>
+              <v-list-item>
+                <v-list-item-title
+                  >{{ headersSkillDetails.usedBy }}:
+                </v-list-item-title>
+                <v-list-item-subtitle>
+                  {{ skill.usedBy }}
+                </v-list-item-subtitle>
+              </v-list-item>
             </v-list>
           </v-card>
+        </v-col>
+      </v-row>
+      <v-row class="my-7" no-gutters>
+        <v-col cols="12">
+          <mcdb-tabs :data-table-tabs="dataTableTabs" />
         </v-col>
       </v-row>
     </template>
@@ -70,20 +83,41 @@
 <script>
 import McdbLoading from "@/components/Loading.vue";
 import McdbErrorMessage from "@/components/ErrorMessage.vue";
+import McdbTabs from "@/components/Tabs.vue";
 
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { actionTypes } from "@/store/modules/skillDetails.js";
+import { actionTypes as actionTypesNL } from "@/store/modules/npc.js";
+import { actionTypes as actionTypesIS } from "@/store/modules/items.js";
+import { actionTypes as actionTypesMS } from "@/store/modules/monsters.js";
+import { getterTypes as getterTypesSS } from "@/store/modules/npc.js";
+import { getterTypes as getterTypesIS } from "@/store/modules/items.js";
+import { getterTypes as getterTypesMS } from "@/store/modules/monsters.js";
 
 import { headersSkillDetails } from "@/helpers/headers/forSkills.js";
-
+import {
+  headersForBoughtSkills,
+  headersForItemSkills,
+  headersForMonsterSkills,
+} from "@/helpers/headers/forSkills.js";
+import {
+  API_URL_NPC,
+  API_URL_ITEMS,
+  API_URL_MONSTERS,
+} from "@/helpers/vars.js";
 export default {
   name: "McdbSkillDetails",
-  components: { McdbLoading, McdbErrorMessage },
+  components: { McdbLoading, McdbErrorMessage, McdbTabs },
   computed: {
     ...mapState({
       isLoading: (state) => state.skillDetails.isLoading,
       skill: (state) => state.skillDetails.data,
       error: (state) => state.skillDetails.error,
+    }),
+    ...mapGetters({
+      myNpcPerIds: getterTypesSS.myNpcPerIds,
+      myItemsPerIds: getterTypesIS.myItemsPerIds,
+      myMonstersPerIds: getterTypesMS.myMonstersPerIds,
     }),
     headersSkillDetails() {
       return headersSkillDetails;
@@ -91,9 +125,66 @@ export default {
     slugName() {
       return this.$route.params.slug;
     },
+    npcData() {
+      if (!this.skill || this.skill.buyFrom.length < 1) {
+        return [];
+      }
+      return this.skill.buyFrom;
+    },
+    itemsData() {
+      if (!this.skill || this.skill.usedItems.length < 1) {
+        return [];
+      }
+      return this.skill.usedItems;
+    },
+    monstersData() {
+      if (!this.skill || this.skill.usedMonsters.length < 1) {
+        return [];
+      }
+      return this.skill.usedMonsters;
+    },
+    receivedNpc() {
+      return this.myNpcPerIds(this.npcData);
+    },
+    receivedItems() {
+      return this.myItemsPerIds(this.itemsData);
+    },
+    receivedMonsters() {
+      return this.myMonstersPerIds(this.monstersData);
+    },
+    dataTableTabs() {
+      return [
+        {
+          typeTable: "dataTable",
+          tabName: headersSkillDetails.buyFrom.title,
+          headersTable: headersForBoughtSkills,
+          contentTable: this.receivedNpc,
+          routerTo: "npcDetails",
+        },
+        {
+          typeTable: "dataTable",
+          tabName: headersSkillDetails.usedItem.title,
+          headersTable: headersForItemSkills,
+          contentTable: this.receivedItems,
+          routerTo: "itemDetails",
+        },
+        {
+          typeTable: "dataTable",
+          tabName: headersSkillDetails.usedMonster.title,
+          headersTable: headersForMonsterSkills,
+          contentTable: this.receivedMonsters,
+          routerTo: "monsterDetails",
+        },
+      ];
+    },
   },
   data() {
     return {};
+  },
+  created() {
+    this.getNpc();
+    this.getItems();
+    this.getMonsters();
   },
   mounted() {
     this.getSkill();
@@ -102,6 +193,21 @@ export default {
     getSkill() {
       return this.$store.dispatch(actionTypes.getSkillDetails, {
         slug: this.slugName,
+      });
+    },
+    getNpc() {
+      return this.$store.dispatch(actionTypesNL.getNpc, {
+        apiUrl: API_URL_NPC,
+      });
+    },
+    getItems() {
+      return this.$store.dispatch(actionTypesIS.getItems, {
+        apiUrl: API_URL_ITEMS,
+      });
+    },
+    getMonsters() {
+      return this.$store.dispatch(actionTypesMS.getMonsters, {
+        apiUrl: API_URL_MONSTERS,
       });
     },
   },

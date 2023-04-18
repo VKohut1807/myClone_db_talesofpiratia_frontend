@@ -6,6 +6,26 @@ const state = {
   error: null,
 };
 
+export const getterTypes = {
+  mySkills: "[skills] my Skills",
+};
+
+const getters = {
+  [getterTypes.mySkills]: (state) => (lfSkills) => {
+    if (state.data === null || state.data.length < 1) {
+      return [];
+    }
+    return state.data.filter((stateSkill) => {
+      const lfSkill = lfSkills.find((skill) => skill.id === stateSkill.id);
+      if (lfSkill) {
+        stateSkill.chance = lfSkill.chance;
+        return true;
+      }
+      return false;
+    });
+  },
+};
+
 export const mutationTypes = {
   getSkillsStart: "[skills] Get skills start",
   getSkillsSuccess: "[skills] Get skills success",
@@ -49,6 +69,7 @@ const actions = {
 
 export default {
   state,
+  getters,
   actions,
   mutations,
 };

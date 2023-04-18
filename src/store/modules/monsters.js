@@ -6,6 +6,41 @@ const state = {
   error: null,
 };
 
+export const getterTypes = {
+  myMonsters: "[monsters] my Monsters",
+  myMonstersPerIds: "[monsters ids] my Monsters per ids",
+};
+
+const getters = {
+  [getterTypes.myMonsters]: (state) => (lfMonsters) => {
+    if (state.data === null || state.data.length < 1) {
+      return [];
+    }
+    return state.data.filter((stateMonster) => {
+      const lfMonster = lfMonsters.find(
+        (monster) => monster.id === stateMonster.id
+      );
+      if (lfMonster) {
+        stateMonster.chance = lfMonster.chance;
+        return true;
+      }
+      return false;
+    });
+  },
+  [getterTypes.myMonstersPerIds]: (state) => (lfMonsters) => {
+    if (state.data === null || state.data.length < 1) {
+      return [];
+    }
+    return state.data.filter((stateMonster) => {
+      const lfMonster = lfMonsters.find((id) => id === stateMonster.id);
+      if (lfMonster) {
+        return true;
+      }
+      return false;
+    });
+  },
+};
+
 export const mutationTypes = {
   getMonstersStart: "[monsters] Get monsters start",
   getMonstersSuccess: "[monsters] Get monsters success",
@@ -49,6 +84,7 @@ const actions = {
 
 export default {
   state,
+  getters,
   actions,
   mutations,
 };

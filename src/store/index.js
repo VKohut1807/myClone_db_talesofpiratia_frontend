@@ -8,7 +8,7 @@ import monsterDetails from "@/store/modules/monsterDetails.js";
 import skillDetails from "@/store/modules/skillDetails.js";
 import skills from "@/store/modules/skills.js";
 import npc from "@/store/modules/npc.js";
-import LF_Elements from "@/store/modules/LF_Elements.js";
+import npcDetails from "@/store/modules/npcDetails.js";
 
 Vue.use(Vuex);
 
@@ -25,6 +25,6 @@ export default new Vuex.Store({
     skills,
     skillDetails,
     npc,
-    LF_Elements,
+    npcDetails,
   },
 });

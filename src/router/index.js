@@ -13,6 +13,7 @@ import Skills from "@/views/Skills.vue";
 import SkillDetails from "@/views/SkillDetails.vue";
 
 import Npc from "@/views/Npc.vue";
+import NpcDetails from "@/views/NpcDetails.vue";
 
 Vue.use(VueRouter);
 
@@ -78,6 +79,11 @@ const routes = [
         path: "/",
         name: "npc",
         component: Npc,
+      },
+      {
+        path: ":slug",
+        name: "npcDetails",
+        component: NpcDetails,
       },
     ],
   },

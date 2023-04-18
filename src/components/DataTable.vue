@@ -4,6 +4,7 @@
     :items="items"
     :sort-by="['id']"
     :items-per-page="itemsPerPage"
+    :hide-default-footer="hideDefaultFooter"
     class="elevation-1"
     dense
   >
@@ -27,14 +28,8 @@
         {{ item.type }}
       </router-link>
     </template>
-    <template #item.area="{ item }">
-      <router-link
-        v-for="(space, idx) in item.area"
-        :key="idx"
-        :to="{ name: 'home' }"
-      >
-        <span class="px-1">{{ space }}</span>
-      </router-link>
+    <template #item.exchange="{ item }">
+      {{ item }}
     </template>
     <template #item.coordinates="{ item }">
       <router-link :to="{ name: 'home' }">
@@ -63,6 +58,10 @@ export default {
     routerTo: {
       type: String,
       required: true,
+    },
+    hideDefaultFooter: {
+      type: Boolean,
+      default: false,
     },
   },
 };

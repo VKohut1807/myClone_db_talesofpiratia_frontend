@@ -220,12 +220,9 @@
       </v-row>
       <v-row class="my-7" no-gutters>
         <v-col cols="12">
-          <mcdb-item-additionally
-            :storage-data="storageData"
-            :monsters-data="monstersData"
-            :elements-data="elementsData"
-          /> </v-col
-      ></v-row>
+          <mcdb-tabs :dataTableTabs="dataTableTabs" />
+        </v-col>
+      </v-row>
     </template>
   </v-container>
 </template>
@@ -233,33 +230,42 @@
 <script>
 import McdbLoading from "@/components/Loading.vue";
 import McdbErrorMessage from "@/components/ErrorMessage.vue";
-import McdbItemAdditionally from "@/components/ItemAdditionally.vue";
+import McdbTabs from "@/components/Tabs.vue";
 
-import { mapState } from "vuex";
-import { actionTypes } from "@/store/modules/itemDetails.js";
+import { mapState, mapGetters } from "vuex";
+import { actionTypes as actionTypesI } from "@/store/modules/itemDetails.js";
+import { actionTypes as actionTypesMS } from "@/store/modules/monsters.js";
+import { actionTypes as actionTypesIS } from "@/store/modules/items.js";
+import { getterTypes as getterTypesMS } from "@/store/modules/monsters.js";
+import { getterTypes as getterTypesIS } from "@/store/modules/items.js";
 
 import { headersItemDetails } from "@/helpers/headers/forItems.js";
+import {
+  headersInsideMonstersItems,
+  headersInsideStorageItems,
+  headersContainsElements,
+} from "@/helpers/headers/forItems.js";
+import { API_URL_MONSTERS, API_URL_ITEMS } from "@/helpers/vars.js";
 
 export default {
   name: "McdbItemDetails",
-  components: { McdbLoading, McdbErrorMessage, McdbItemAdditionally },
+  components: { McdbLoading, McdbErrorMessage, McdbTabs },
   computed: {
     ...mapState({
       isLoading: (state) => state.itemDetails.isLoading,
       item: (state) => state.itemDetails.data,
       error: (state) => state.itemDetails.error,
     }),
+    ...mapGetters({
+      myMonsters: getterTypesMS.myMonsters,
+      myItems: getterTypesIS.myItems,
+    }),
+
     headersItemDetails() {
       return headersItemDetails;
     },
     slugName() {
       return this.$route.params.slug;
-    },
-    storageData() {
-      if (!this.item || this.item.insideStorage.length < 1) {
-        return [];
-      }
-      return this.item.insideStorage;
     },
     monstersData() {
       if (!this.item || this.item.insideMonsters.length < 1) {
@@ -267,23 +273,82 @@ export default {
       }
       return this.item.insideMonsters;
     },
+    storageData() {
+      if (!this.item || this.item.insideStorage.length < 1) {
+        return [];
+      }
+      return this.item.insideStorage;
+    },
     elementsData() {
       if (!this.item || this.item.containsElements.length < 1) {
         return [];
       }
       return this.item.containsElements;
     },
+    receivedMonsters() {
+      return this.myMonsters(this.monstersData);
+    },
+    receivedItems() {
+      return this.myItems(this.storageData);
+    },
+    receivedElements() {
+      return this.myItems(this.elementsData);
+    },
+    dataTableTabs() {
+      return [
+        {
+          typeTable: "dataTable",
+          tabName: headersItemDetails.insideMonsters.title,
+          headersTable: headersInsideMonstersItems,
+          contentTable: this.receivedMonsters,
+          routerTo: "monsterDetails",
+        },
+        {
+          typeTable: "dataTable",
+          tabName: headersItemDetails.insideStorage.title,
+          headersTable: headersInsideStorageItems,
+          contentTable: this.receivedItems,
+          routerTo: "itemDetails",
+        },
+        {
+          typeTable: "dataTable",
+          tabName: headersItemDetails.containsElements.title,
+          headersTable: headersContainsElements,
+          contentTable: this.receivedElements,
+          routerTo: "itemDetails",
+        },
+      ];
+    },
+  },
+  watch: {
+    slugName() {
+      this.getItem();
+    },
   },
   data() {
     return {};
+  },
+  created() {
+    this.getMonsters();
+    this.getItems();
   },
   mounted() {
     this.getItem();
   },
   methods: {
     getItem() {
-      return this.$store.dispatch(actionTypes.getItemDetails, {
+      return this.$store.dispatch(actionTypesI.getItemDetails, {
         slug: this.slugName,
+      });
+    },
+    getMonsters() {
+      return this.$store.dispatch(actionTypesMS.getMonsters, {
+        apiUrl: API_URL_MONSTERS,
+      });
+    },
+    getItems() {
+      return this.$store.dispatch(actionTypesIS.getItems, {
+        apiUrl: API_URL_ITEMS,
       });
     },
   },

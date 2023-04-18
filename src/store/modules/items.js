@@ -6,6 +6,43 @@ const state = {
   error: null,
 };
 
+export const getterTypes = {
+  myItems: "[items] my Items",
+  myItemsPerIds: "[items ids] my Items per ids",
+};
+
+const getters = {
+  [getterTypes.myItems]: (state) => (lfItems) => {
+    if (state.data === null || state.data.length < 1) {
+      return [];
+    }
+    return state.data.filter((stateItem) => {
+      const lfItem = lfItems.find((item) => item.id === stateItem.id);
+      if (lfItem && lfItem.chance) {
+        stateItem.chance = lfItem.chance;
+        return true;
+      } else if (lfItem && lfItem.amount) {
+        stateItem.amount = lfItem.amount;
+        return true;
+      }
+      return false;
+    });
+  },
+  [getterTypes.myItemsPerIds]: (state) => (lfItems) => {
+    if (state.data === null || state.data.length < 1) {
+      return [];
+    }
+    return state.data.filter((stateItem) => {
+      const lfItem = lfItems.find((id) => id === stateItem.id);
+      if (lfItem) {
+        stateItem.price *= 2;
+        return true;
+      }
+      return false;
+    });
+  },
+};
+
 export const mutationTypes = {
   getItemsStart: "[items] Get items start",
   getItemsSuccess: "[items] Get items success",
@@ -49,6 +86,7 @@ const actions = {
 
 export default {
   state,
+  getters,
   actions,
   mutations,
 };

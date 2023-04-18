@@ -48,7 +48,7 @@ export default {
     },
   },
   data() {
-    return { itemsPerPage: 15, routerTo: "home" };
+    return { itemsPerPage: 15, routerTo: "npcDetails" };
   },
   mounted() {
     this.$store.dispatch(actionTypes.getNpc, { apiUrl: API_URL_NPC });

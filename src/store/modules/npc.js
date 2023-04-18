@@ -6,6 +6,25 @@ const state = {
   error: null,
 };
 
+export const getterTypes = {
+  myNpcPerIds: "[skills ids] my skills per ids",
+};
+
+const getters = {
+  [getterTypes.myNpcPerIds]: (state) => (lfNpcIds) => {
+    if (state.data === null || state.data.length < 1) {
+      return [];
+    }
+    return state.data.filter((stateNpc) => {
+      const lfNpc = lfNpcIds.find((id) => id === stateNpc.id);
+      if (lfNpc) {
+        return true;
+      }
+      return false;
+    });
+  },
+};
+
 export const mutationTypes = {
   getNpcStart: "[npc] Get npc start",
   getNpcSuccess: "[npc] Get npc success",
@@ -49,6 +68,7 @@ const actions = {
 
 export default {
   state,
+  getters,
   actions,
   mutations,
 };

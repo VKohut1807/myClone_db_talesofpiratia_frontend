@@ -24,7 +24,7 @@
       "insideMonsters": [{ "id": 1358, "chance": 100 }],
       "containsElements": [
         { "id": 15633, "chance": 100 },
-        { "id": 7882, "chance": 100 }
+        { "id": 7611, "chance": 100 }
       ],
       "bonuses": {}
     },
@@ -52,6 +52,7 @@
           "chance": 100
         }
       ],
+      "containsElements": [],
       "bonuses": {}
     },
     {
@@ -73,6 +74,7 @@
       "stackable": 99,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {}
     },
     {
@@ -94,6 +96,7 @@
       "stackable": 99,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {}
     },
     {
@@ -115,6 +118,7 @@
       "stackable": 1,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {
         "id": 15631,
         "constitution": 2,
@@ -148,6 +152,7 @@
       "stackable": 1,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {
         "id": 15630,
         "constitution": 2,
@@ -181,6 +186,7 @@
       "stackable": 1,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {
         "id": 15629,
         "constitution": 2,
@@ -218,6 +224,7 @@
       "stackable": 1,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {
         "id": 15628,
         "constitution": 3,
@@ -251,6 +258,7 @@
       "stackable": 1,
       "insideStorage": [],
       "insideMonsters": [],
+      "containsElements": [],
       "bonuses": {}
     }
   ],
@@ -315,7 +323,12 @@
       "img": "https://pirateking.online/data/database/icon/s0247.png",
       "information": "No information",
       "effect": "No information",
-      "consumption": "No information"
+      "consumption": "No information",
+      "usedBy": "Monster",
+      "usedMonsters": [1358],
+      "usedItems": [],
+      "buyFrom": [],
+      "price": 1000
     },
     {
       "id": 36,
@@ -324,7 +337,12 @@
       "img": "https://media.discordapp.net/attachments/1087926414235422812/1087944219055902753/LEGO_no_human_sci_fi_skill_element_32x32_cosmos_sun_rays_greenb_297c2167-fe9c-4934-974d-1c21118a28bf.png?width=572&height=572",
       "information": "No information",
       "effect": "No information",
-      "consumption": "No information"
+      "consumption": "No information",
+      "usedBy": "Item",
+      "usedMonsters": [],
+      "usedItems": [7882],
+      "buyFrom": [],
+      "price": 1000
     },
     {
       "id": 281,
@@ -333,7 +351,12 @@
       "img": "https://pirateking.online/data/database/icon/s0127.png",
       "information": "Monster Skill",
       "effect": "Monster Skill",
-      "consumption": "No information"
+      "consumption": "No information",
+      "usedBy": "Monster",
+      "usedMonsters": [1358],
+      "usedItems": [],
+      "buyFrom": [],
+      "price": 1000
     },
     {
       "id": 328,
@@ -342,58 +365,178 @@
       "img": "https://pirateking.online/data/database/icon/s0099.png",
       "information": "Attacks target with magical damage",
       "effect": "Deal magical damage and ignore Physical Defense. Damage determined by skill level and spirit.",
-      "consumption": "Consumes 32 SP at Level 1. Increases by 2 SP per skill level"
+      "consumption": "Consumes 32 SP at Level 1. Increases by 2 SP per skill level",
+      "usedBy": "Character",
+      "usedMonsters": [],
+      "usedItems": [],
+      "buyFrom": [60138],
+      "price": 1000
     }
   ],
   "npc": [
     {
       "id": 60080,
-      "img": "https://mordo.info/images/npc/10.png",
+      "img": "https://pirateking.online/data/database/monster/428.png",
       "name": "223 Squadron 1",
-      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
-      "coordinates": { "x": 2270, "y": 2823 }
+      "greaterHeal": "No",
+      "teleporter": "No",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Argent City",
+      "coordinates": { "x": 2270, "y": 2823 },
+      "trade": [],
+      "exchangeIn": [],
+      "exchangeOut": []
     },
     {
       "id": 60081,
-      "img": "https://mordo.info/images/npc/10.png",
+      "img": "https://pirateking.online/data/database/monster/428.png",
       "name": "223 Squadron 2",
-      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
-      "coordinates": { "x": 2270, "y": 2834 }
+      "greaterHeal": "No",
+      "teleporter": "No",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Argent City",
+      "coordinates": { "x": 2270, "y": 2834 },
+      "trade": [],
+      "exchangeIn": [],
+      "exchangeOut": []
     },
     {
       "id": 60082,
-      "img": "https://mordo.info/images/npc/10.png",
+      "img": "https://pirateking.online/data/database/monster/428.png",
       "name": "223 Squadron 3",
-      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
-      "coordinates": { "x": 2203, "y": 2829 }
+      "greaterHeal": "No",
+      "teleporter": "No",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Argent City",
+      "coordinates": { "x": 2203, "y": 2829 },
+      "trade": [],
+      "exchangeIn": [],
+      "exchangeOut": []
     },
     {
       "id": 60083,
-      "img": "https://mordo.info/images/npc/10.png",
+      "img": "https://pirateking.online/data/database/monster/428.png",
       "name": "223 Squadron 4",
-      "area": ["Ascaron 7", "Argent City", "Abandon Mine"],
-      "coordinates": { "x": 2197, "y": 2829 }
+      "greaterHeal": "No",
+      "teleporter": "No",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Argent City",
+      "coordinates": { "x": 2197, "y": 2829 },
+      "trade": [],
+      "exchangeIn": [],
+      "exchangeOut": []
     },
     {
       "id": 140022,
-      "img": "https://mordo.info/images/npc/7.png",
+      "img": "https://pirateking.online/data/database/monster/423.png",
       "name": "Abaddon 1 Warden",
-      "area": ["Abaddon 1-4"],
-      "coordinates": { "x": 199, "y": 825 }
+      "greaterHeal": "No",
+      "teleporter": "Yes",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Abaddon 1",
+      "coordinates": { "x": 199, "y": 825 },
+      "trade": [],
+      "exchangeIn": [
+        {
+          "id": 15628,
+          "amount": 1
+        }
+      ],
+      "exchangeOut": [
+        {
+          "id": 15630,
+          "amount": 1
+        }
+      ]
     },
     {
       "id": 100001,
-      "img": "https://mordo.info/images/npc/12.png",
+      "img": "https://pirateking.online/data/database/monster/827.png",
       "name": "Abaddon Merchant",
-      "area": ["Abaddon 10-17", "Hades"],
-      "coordinates": { "x": 191, "y": 174 }
+      "greaterHeal": "No",
+      "teleporter": "No",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Abaddon Heaven",
+      "coordinates": { "x": 191, "y": 174 },
+      "trade": [885, 7882],
+      "exchangeIn": [],
+      "exchangeOut": []
     },
     {
       "id": 60138,
-      "img": "https://mordo.info/images/npc/13.png",
+      "img": "https://pirateking.online/data/database/monster/19.png",
       "name": "Accessory - Aii",
-      "area": ["Ascaron 2", "Thundoria Castle", "Chaldea Tundra"],
-      "coordinates": { "x": 635, "y": 2091 }
+      "greaterHeal": "No",
+      "teleporter": "No",
+      "banker": "No",
+      "blacksmith": "No",
+      "buildShip": "No",
+      "repairShip": "No",
+      "supplyShip": "No",
+      "salvageShip": "No",
+      "jobPromotion": "No",
+      "providesMissions": "No",
+      "cargoTrade": "No",
+      "loadProductsUpShip": "No",
+      "area": "Chaldea Haven",
+      "coordinates": { "x": 635, "y": 2091 },
+      "trade": [],
+      "exchangeIn": [],
+      "exchangeOut": []
     }
   ]
 }
